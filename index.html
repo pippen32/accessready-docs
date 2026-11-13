@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AccessReady Docs — WCAG 2.1 AA PDF Remediation for Governments & Schools</title>
+<meta name="description" content="We turn your institution's old public PDFs into tagged, validated WCAG 2.1 AA documents — with a validation report for every file. From $8/page. ADA Title II deadline: April 26, 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;700&family=IBM+Plex+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--navy:#0a1f3d;--navy2:#0e2c55;--cyan:#00c2e8;--lime:#a6e22e;--lime2:#7ed321;--paper:#f2f6fb;--ink:#13233d;--mut:#5a6b84;--line:#d3deeb;--red:#d92d20}
+body{font-family:'IBM Plex Sans',system-ui,sans-serif;color:var(--ink);background:#fff;line-height:1.55;overflow-x:hidden}
+img{max-width:100%;display:block}
+.mono{font-family:'IBM Plex Mono',monospace}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+.deadline{background:var(--red);color:#fff;text-align:center;padding:10px 16px;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:14px;letter-spacing:.04em}
+.deadline b{background:#fff;color:var(--red);padding:2px 8px;border-radius:3px;margin:0 4px}
+header.site{background:var(--navy);color:#fff;padding:16px 0}
+header.site .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-weight:800;font-size:24px;letter-spacing:-.02em}.logo span{color:var(--cyan)}
+.logo small{display:block;font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:10px;letter-spacing:.18em;color:#9fc3e8;text-transform:uppercase}
+.btn{display:inline-block;background:var(--cyan);color:#04263a;font-weight:800;padding:16px 28px;border-radius:8px;text-decoration:none;font-size:17px;text-align:center;border:0;cursor:pointer}
+.btn:hover{filter:brightness(1.07)} .btn.lime{background:var(--lime);color:#1c2f05}
+.btn.small{padding:10px 18px;font-size:14px}
+.hero{background:linear-gradient(160deg,var(--navy) 55%,var(--navy2));color:#fff;padding:48px 0 56px}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:36px;align-items:center}
+.hero h1{font-size:44px;line-height:1.05;letter-spacing:-.02em;margin:14px 0}
+.hero h1 em{color:var(--cyan);font-style:normal}
+.hero p.lead{font-size:19px;color:#cfe2f5;max-width:54ch}
+.stamp{display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:700;border:3px solid var(--lime);color:var(--lime);padding:6px 14px;border-radius:6px;transform:rotate(-2deg);letter-spacing:.08em;font-size:15px}
+.hero img{border-radius:12px;border:4px solid rgba(255,255,255,.15);width:100%;height:auto}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.hero-note{font-family:'IBM Plex Mono',monospace;font-size:12px;color:#9fc3e8;margin-top:12px}
+section{padding:56px 0}
+section.alt{background:var(--paper)}
+h2{font-size:32px;letter-spacing:-.02em;line-height:1.15;margin-bottom:12px}
+h2 .hl{color:#0077a8}
+.sub{color:var(--mut);font-size:17px;max-width:68ch;margin-bottom:28px}
+.kicker{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#0077a8;font-weight:700;margin-bottom:8px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{color:var(--mut);font-size:15px}
+.check{color:var(--lime2);font-weight:800}
+/* ledger table */
+.ledger{width:100%;border-collapse:collapse;background:#fff;border:2px solid var(--navy);border-radius:10px;overflow:hidden;font-size:15px}
+.ledger th{background:var(--navy);color:#fff;text-align:left;padding:12px 14px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.ledger td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+.pass{display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;color:#2a5c00;background:#e6f7c9;border:2px solid var(--lime2);padding:2px 8px;border-radius:4px}
+.fail{display:inline-block;font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:12px;color:#8a130c;background:#fde8e5;border:2px solid var(--red);padding:2px 8px;border-radius:4px}
+/* before after */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.panel{border-radius:12px;overflow:hidden;border:2px solid var(--line)}
+.panel-head{padding:12px 16px;font-family:'IBM Plex Mono',monospace;font-weight:700;letter-spacing:.06em;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.before .panel-head{background:#3a0f0c;color:#ffb4ab}
+.after .panel-head{background:var(--navy);color:#fff}
+.sample-tag{background:#ffd60a;color:#111;padding:2px 8px;border-radius:3px;font-size:12px}
+.panel-body{padding:18px;background:#fff}
+.panel-body img{border-radius:6px;transform:rotate(-1deg);border:1px solid var(--line)}
+.fail-list{list-style:none;margin-top:16px}
+.fail-list li{padding:8px 0;border-top:1px dashed var(--line);font-size:15px}
+.fail-list li::before{content:"✕ ";color:var(--red);font-weight:800}
+.tree{font-family:'IBM Plex Mono',monospace;font-size:14px;line-height:1.9;background:#0a1f3d;color:#d6ecff;padding:16px;border-radius:8px;overflow-x:auto;white-space:pre}
+.tree b{color:var(--lime)}
+.alt-text{background:#eef9d2;border:1px solid var(--lime2);border-radius:8px;padding:12px 14px;font-size:14px;margin-top:14px}
+.order-badge{display:inline-block;background:var(--cyan);color:#04263a;font-weight:700;border-radius:50%;width:22px;height:22px;text-align:center;line-height:22px;font-size:13px;margin-right:6px}
+/* comparison */
+.compare{background:var(--navy);color:#fff;border-radius:14px;padding:28px}
+.bar-row{margin:18px 0}
+.bar-label{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:15px;margin-bottom:6px}
+.bar{height:34px;border-radius:6px;background:#23406e;position:relative;overflow:hidden}
+.bar i{position:absolute;inset:0 auto 0 0;display:block}
+.bar.big i{background:var(--red);width:100%}
+.bar.ours i{background:var(--lime);width:52%}
+.compare .note{color:#9fc3e8;font-size:14px;margin-top:14px}
+/* pricing */
+.price-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.price{background:#fff;border:2px solid var(--navy);border-radius:12px;padding:24px;text-align:center}
+.price .amt{font-size:38px;font-weight:800;letter-spacing:-.03em}
+.price .per{font-family:'IBM Plex Mono',monospace;color:var(--mut);font-size:13px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:20px}
+.step .n{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:28px;color:var(--cyan)}
+.step h3{font-size:16px;margin:6px 0}.step p{font-size:14px;color:var(--mut)}
+.faq details{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-bottom:10px}
+.faq summary{font-weight:700;cursor:pointer;font-size:16px}
+.faq p{color:var(--mut);margin-top:8px;font-size:15px}
+.disclaimer{background:#fff7e6;border:1px solid #e6c200;border-radius:10px;padding:20px;font-size:14px;color:#5c4a00}
+.cta-final{background:var(--navy);color:#fff;text-align:center}
+.cta-final h2{color:#fff}
+footer{background:#06152b;color:#8aa6c4;padding:28px 0;font-size:13px;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+@media(max-width:820px){.hero-grid,.ba,.two{grid-template-columns:1fr}.grid3,.price-grid,.steps{grid-template-columns:1fr}.hero h1{font-size:34px}h2{font-size:27px}.ledger{font-size:13px}.ledger th,.ledger td{padding:9px}}
+</style>
+</head>
+<body>
+<div class="deadline">⚠ ADA TITLE II DEADLINE — Entities serving 50,000+ people: <b>APR 26, 2027</b> · Smaller entities &amp; special districts: <b>APR 26, 2028</b></div>
+
+<header class="site"><div class="wrap">
+  <div class="logo">AccessReady <span>Docs</span><small>WCAG 2.1 AA · PDF Remediation Service</small></div>
+  <a class="btn small" href="PAYHIP_CHECKOUT_URL">Start a Project — $500</a>
+</div></header>
+
+<section class="hero"><div class="wrap"><div class="hero-grid">
+  <div>
+    <span class="stamp">PAC CHECK: PASS ✓</span>
+    <h1>Your public PDFs have a <em>federal deadline.</em> Most of them can't be read yet.</h1>
+    <p class="lead">Cities, counties, school districts, universities and hospitals: we take your old public PDFs and return them tagged, in correct reading order, and validated against WCAG 2.1 AA — with a validation report for every document.</p>
+    <div class="hero-cta">
+      <a class="btn lime" href="PAYHIP_CHECKOUT_URL">Start With a $500 Project →</a>
+      <a class="btn" href="#example">See Before / After ↓</a>
+    </div>
+    <p class="hero-note">FROM $8–$15 / PAGE · $500 PROJECT MINIMUM · FREE SAMPLE AUDIT FIRST</p>
+  </div>
+  <div><img src="assets/hero.jpg" alt="Municipal employee reviewing stacks of public documents in a government office" width="1000" height="666"></div>
+</div></div></section>
+
+<section><div class="wrap">
+  <p class="kicker">The problem — in plain numbers</p>
+  <h2>Screen readers can't read a <span class="hl">scanned picture of a page.</span></h2>
+  <p class="sub">Millions of public PDFs — board agendas, benefit forms, handbooks, annual reports — were posted as flat scans or untagged exports. To a blind resident using a screen reader, they are blank, jumbled, or impossible to navigate. The DOJ's ADA Title II rule now requires state and local government web and mobile content to meet WCAG 2.1 AA. The obligation is already in force; the compliance dates are April 26, 2027 (entities serving 50,000+ people) and April 26, 2028 (smaller entities and special districts). Section 504 (HHS) follows on May 11, 2027 and May 10, 2028.</p>
+  <div class="two">
+    <img src="assets/assistive.jpg" alt="Person using assistive technology with a laptop and headphones" style="border-radius:12px" width="700" height="466">
+    <div>
+      <table class="ledger">
+        <tr><th>What gets checked</th><th>Typical old PDF</th></tr>
+        <tr><td>Document tags &amp; headings</td><td><span class="fail">FAIL</span></td></tr>
+        <tr><td>Reading order</td><td><span class="fail">FAIL</span></td></tr>
+        <tr><td>Tables with header rows</td><td><span class="fail">FAIL</span></td></tr>
+        <tr><td>Alt text on images &amp; seals</td><td><span class="fail">FAIL</span></td></tr>
+        <tr><td>Form fields labeled</td><td><span class="fail">FAIL</span></td></tr>
+      </table>
+      <p style="margin-top:12px;color:var(--mut);font-size:14px">This is the exact gap a free sample audit shows you — on your own documents, before you pay anything.</p>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <p class="kicker">What remediation includes</p>
+  <h2>Every document comes back <span class="hl">structured, tagged &amp; validated.</span></h2>
+  <div class="grid3">
+    <div class="card"><h3><span class="check">✓</span> Headings &amp; structure</h3><p>Real heading levels, lists and landmarks — so screen-reader users can navigate by section instead of listening to the whole file.</p></div>
+    <div class="card"><h3><span class="check">✓</span> Correct reading order</h3><p>Columns, sidebars and footnotes re-sequenced so the document reads in the order a person would read it.</p></div>
+    <div class="card"><h3><span class="check">✓</span> Accessible tables</h3><p>Header rows and columns tagged, so data tables announce their context cell by cell.</p></div>
+    <div class="card"><h3><span class="check">✓</span> Alt text</h3><p>Meaningful descriptions for photos, charts, seals and signatures; decorative items marked as artifacts.</p></div>
+    <div class="card"><h3><span class="check">✓</span> Forms that work</h3><p>Labeled, keyboard-reachable form fields with tooltips — fillable by assistive technology, not just by mouse.</p></div>
+    <div class="card"><h3><span class="check">✓</span> Validation report</h3><p>A per-document report against WCAG 2.1 AA checkpoints, so your team has a record of what was fixed and verified.</p></div>
+  </div>
+</div></section>
+
+<section id="example"><div class="wrap">
+  <p class="kicker">Sample — see the difference</p>
+  <h2>Before / After: one public form, <span class="hl">remediated.</span></h2>
+  <p class="sub">Sample document for illustration only — labeled SAMPLE throughout. This is a representation of the remediation output structure, not a client document.</p>
+  <div class="ba">
+    <div class="panel before">
+      <div class="panel-head"><span>BEFORE — AS POSTED</span><span class="sample-tag">SAMPLE</span></div>
+      <div class="panel-body">
+        <img src="assets/scanned-form.jpg" alt="Crooked scanned public form page, SAMPLE" width="700" height="466">
+        <ul class="fail-list">
+          <li>Scanned image only — no real text layer</li>
+          <li>No headings — nothing to navigate by</li>
+          <li>Reading order broken across columns</li>
+          <li>Tables unreadable to screen readers</li>
+          <li>Form fields unlabeled</li>
+        </ul>
+      </div>
+    </div>
+    <div class="panel after">
+      <div class="panel-head"><span>AFTER — REMEDIATED</span><span class="pass">PAC CHECK: PASS</span></div>
+      <div class="panel-body">
+        <div class="tree"><b>H1</b>  Public Assistance Application
+  <b>H2</b>  1 · Who can apply
+  <b>H2</b>  2 · What to bring
+  <b>H2</b>  3 · Household information  [Table — header row tagged]
+  <b>H2</b>  4 · Sign and submit</div>
+        <p style="margin-top:14px;font-size:15px"><span class="order-badge">1</span>Title → <span class="order-badge">2</span>Instructions → <span class="order-badge">3</span>Table, row by row → <span class="order-badge">4</span>Signature block. Reading order verified page by page.</p>
+        <div class="alt-text"><strong>Alt text, visible in the file:</strong> “City seal of the issuing municipality.” · “Flowchart: application → review in 10 business days → decision letter.”</div>
+        <ul class="fail-list" style="margin-top:10px">
+          <li style="list-style:none">✓ Tagged headings, lists &amp; table headers</li>
+          <li style="list-style:none">✓ Labeled, keyboard-ready form fields</li>
+          <li style="list-style:none">✓ Validation report delivered with the file</li>
+        </ul>
+        <p class="mono" style="font-size:12px;color:var(--mut)">SAMPLE — STRUCTURE REPRESENTATION</p>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <p class="kicker">Honest price comparison — verified figures</p>
+  <h2>Done-for-you, for less than <span class="hl">the big-firm rate.</span></h2>
+  <div class="compare">
+    <div class="bar-row"><div class="bar-label"><span>Big-firm manual remediation — up to $25 / page</span><strong>300 pages = $7,500</strong></div><div class="bar big"><i></i></div></div>
+    <div class="bar-row"><div class="bar-label"><span>AccessReady Docs — $8–$15 / page, done-for-you with validation report</span><strong>300 pages = $2,400–$4,500</strong></div><div class="bar ours"><i></i></div></div>
+    <p class="note">And the DIY route isn't free either: professional remediation software alone (CommonLook / Equidox class) costs $299–$349 per user, per month — before anyone does the work. Market reference: Accessible.org lists PDF remediation from $4.00/page with a $250 minimum and typical projects of $750–$4,500; published professional manual range is $5–$25+ per page (Venngage cost guide).</p>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <p class="kicker">Pricing</p>
+  <h2>Per page. No surprises. <span class="hl">$500 minimum project.</span></h2>
+  <div class="price-grid">
+    <div class="price"><div class="amt">$8</div><div class="per">PER PAGE — STANDARD</div><p style="color:var(--mut);font-size:14px;margin-top:8px">Text-based PDFs, simple layout, few tables.</p></div>
+    <div class="price"><div class="amt">$12</div><div class="per">PER PAGE — COMPLEX</div><p style="color:var(--mut);font-size:14px;margin-top:8px">Multi-column, data tables, forms, charts.</p></div>
+    <div class="price"><div class="amt">$15</div><div class="per">PER PAGE — SCANNED / HEAVY</div><p style="color:var(--mut);font-size:14px;margin-top:8px">Scanned-only files needing OCR + full rebuild.</p></div>
+  </div>
+  <p style="margin-top:18px;color:var(--mut)">A typical small-district project (300–800 pages) runs <strong style="color:var(--ink)">$2,400–$12,000</strong>. Optional maintenance review for newly published PDFs: <strong style="color:var(--ink)">from $299/month</strong>. Exact per-page rate is confirmed after your free sample audit — before any payment beyond the project start.</p>
+  <div style="text-align:center;margin-top:26px"><a class="btn lime" href="PAYHIP_CHECKOUT_URL" style="font-size:19px;padding:18px 36px">Start My Project — $500 →</a><p class="mono" style="font-size:12px;color:var(--mut);margin-top:10px">$500 COVERS THE FIRST BATCH — UP TO 40 STANDARD PAGES</p></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <p class="kicker">How it works</p>
+  <h2>Four steps, <span class="hl">starting with a free audit.</span></h2>
+  <div class="steps">
+    <div class="step"><div class="n">01</div><h3>Free sample audit</h3><p>Send a few representative PDFs. We check them and show you exactly what fails — and the exact per-page rate for your set.</p></div>
+    <div class="step"><div class="n">02</div><h3>Project package</h3><p>You approve the scope and start with the $500 project start (first batch, up to 40 standard pages). Larger sets are quoted at $8–$15/page.</p></div>
+    <div class="step"><div class="n">03</div><h3>Remediation</h3><p>Tagging, reading order, tables, alt text and form fields — done document by document, checked as we go.</p></div>
+    <div class="step"><div class="n">04</div><h3>Validation report</h3><p>You receive the remediated files plus a per-document validation report against WCAG 2.1 AA.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap faq">
+  <p class="kicker">FAQ</p><h2>Straight answers.</h2>
+  <details><summary>Which deadline applies to us?</summary><p>Under the DOJ's ADA Title II interim final rule (April 20, 2026): entities serving 50,000+ people — April 26, 2027. Smaller entities and special districts — April 26, 2028. Section 504 (HHS): May 11, 2027 and May 10, 2028. Your counsel confirms which bucket you are in; we remediate against WCAG 2.1 AA either way.</p></details>
+  <details><summary>What does the $500 project start cover?</summary><p>The first remediation batch: up to 40 standard pages. If your documents are complex or scanned-only, the batch page count is set in writing after the free sample audit, before work begins. Larger projects continue at the confirmed $8–$15/page rate.</p></details>
+  <details><summary>Do you guarantee legal compliance?</summary><p>No — and be wary of anyone who does. We deliver remediation verified against the WCAG 2.1 AA standard, with a validation report. Legal responsibility for compliance remains with your institution.</p></details>
+  <details><summary>What file types do you take?</summary><p>PDFs of any age or origin — native exports, Word-to-PDF, and scanned-only files (OCR included in the scanned/heavy tier).</p></details>
+  <details><summary>Can you keep new PDFs accessible going forward?</summary><p>Yes — the optional maintenance review starts at $299/month and covers newly published documents on a recurring check-and-remediate cycle.</p></details>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <div class="disclaimer"><strong>Honest legal note:</strong> AccessReady Docs sells remediation verified against the WCAG 2.1 AA standard, with per-document validation reporting. We do not provide legal advice and we do not offer a “legal guarantee” — legal responsibility for accessibility compliance remains with your institution. Deadlines cited are from the DOJ ADA Title II interim final rule of April 20, 2026 and the HHS Section 504 rule; confirm your entity's date with your own counsel.</div>
+</div></section>
+
+<section class="cta-final"><div class="wrap">
+  <span class="stamp">APR 26, 2027 IS CLOSER THAN IT LOOKS</span>
+  <h2 style="margin:16px 0">Start with the audit. Keep the report either way.</h2>
+  <p style="color:#cfe2f5;max-width:60ch;margin:0 auto 24px">The $500 project start covers your first batch — up to 40 standard pages — remediated and validated. Larger projects quoted at $8–$15/page after your free sample audit.</p>
+  <a class="btn lime" href="PAYHIP_CHECKOUT_URL" style="font-size:19px;padding:18px 36px">Start a Project — $500 →</a>
+</div></section>
+
+<footer><div class="wrap">AccessReady Docs — WCAG 2.1 AA PDF remediation for cities, counties, school districts, universities &amp; hospitals. Sample document on this page is labeled SAMPLE and is for illustration only. No client results are claimed on this page.</div></footer>
+</body>
+</html>
